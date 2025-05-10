@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
@@ -8,18 +10,18 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "frontend"))); // Раздача статики
+app.use(express.static(path.join(__dirname, "frontend")));
 
-// Настройка Nodemailer
+// Настройка Nodemailer с переменными окружения
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "renatdasania8@gmail.com",
-    pass: "lhez jffg zonc dcsi",
+    user: process.env.GMAIL_USER, // Данные из .env
+    pass: process.env.GMAIL_PASSWORD,
   },
 });
 
-// Обработка POST-запроса для формы
+// Обработка POST-запроса
 app.post("/send-form", (req, res) => {
   const { name, phone, message } = req.body;
 
@@ -28,8 +30,8 @@ app.post("/send-form", (req, res) => {
   }
 
   const mailOptions = {
-    from: "renatdasania8@gmail.com",
-    to: "renatdasania8@gmail.com",
+    from: process.env.GMAIL_USER,
+    to: process.env.GMAIL_USER,
     subject: "Новая заявка с сайта",
     text: `Имя: ${name}\nТелефон: ${phone}\nСообщение: ${
       message || "Не указано"
@@ -45,12 +47,12 @@ app.post("/send-form", (req, res) => {
   });
 });
 
-// Обработка всех GET-запросов (для SPA)
+// Обработка GET-запросов
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
-// Порт для хостинга или локального запуска
+// Порт
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);

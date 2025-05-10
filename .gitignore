@@ -1,10 +1,4 @@
-# Игнорировать зависимости
 node_modules/
-package-lock.json
-
-# Локальные файлы
 .env
-*.log
-
-# Системные файлы
 .DS_Store
+package-lock.json
