@@ -2,113 +2,94 @@
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-
     const targetId = this.getAttribute("href");
     if (targetId === "#") return;
 
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-      });
+      targetElement.scrollIntoView({ behavior: "smooth" });
 
-      // Закрываем мобильное меню после клика
-      const navbarCollapse = document.querySelector(".navbar-collapse");
-      if (navbarCollapse.classList.contains("show")) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-        bsCollapse.hide();
-      }
+      // Закрытие мобильного меню
+      const navbarCollapse = document.querySelector(".navbar-collapse.show");
+      if (navbarCollapse) new bootstrap.Collapse(navbarCollapse).hide();
     }
   });
 });
 
-// Изменение навбара при скролле
-const navbar = document.querySelector(".navbar");
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 100) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
+// Динамический навбар
+window.addEventListener("scroll", () => {
+  document
+    .querySelector(".navbar")
+    .classList.toggle("scrolled", window.scrollY > 100);
 });
 
 // Кнопка "Наверх"
 const backToTopButton = document.getElementById("backToTop");
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 300) {
-    backToTopButton.classList.add("visible");
-  } else {
-    backToTopButton.classList.remove("visible");
-  }
+window.addEventListener("scroll", () => {
+  backToTopButton.classList.toggle("visible", window.scrollY > 300);
 });
 
-backToTopButton.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 // Галерея изображений
 const galleryModal = document.getElementById("galleryModal");
 if (galleryModal) {
-  galleryModal.addEventListener("show.bs.modal", function (event) {
-    const button = event.relatedTarget;
-    const imgSrc = button.getAttribute("data-img");
-    const modalImage = document.getElementById("modalImage");
-    modalImage.src = imgSrc;
+  galleryModal.addEventListener("show.bs.modal", (event) => {
+    document.getElementById("modalImage").src = event.relatedTarget.dataset.img;
   });
 }
 
-// Backend часть
-async function sendForm(data) {
-  try {
-    const response = await fetch("http://localhost:3001/send-form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error("Ошибка при отправке формы:", error);
-    throw error;
-  }
-}
-
-// Единственный обработчик формы
+// Отправка формы (исправленная версия)
 document
   .getElementById("contactForm")
-  ?.addEventListener("submit", async function (e) {
+  ?.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    const submitBtn = document.getElementById("submitBtn");
     const form = e.target;
+    const submitBtn = document.getElementById("submitBtn");
 
     try {
+      // Валидация телефона
+      const rawPhone = form.phone.value.replace(/\D/g, "");
+      if (!/^7\d{10}$/.test(rawPhone)) {
+        throw new Error("Номер должен начинаться с 7 и содержать 11 цифр");
+      }
+
       submitBtn.disabled = true;
-      submitBtn.innerHTML =
-        '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Отправка...';
+      submitBtn.innerHTML = `
+      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+      Отправка...
+    `;
 
-      const formData = {
-        name: form.elements.name.value,
-        phone: form.elements.phone.value, // Изменил с email на phone
-        message: form.elements.message.value,
-      };
+      // Отправка данных
+      const response = await fetch("http://localhost:3001/send-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json", // Добавлен заголовок Accept
+        },
+        body: JSON.stringify({
+          name: form.name.value.trim(),
+          phone: `+7${rawPhone.slice(1)}`,
+          message: form.message.value.trim(),
+        }),
+      });
 
-      const result = await sendForm(formData);
-      alert(result.message || "Форма успешно отправлена!");
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Ошибка сервера");
+      }
+
+      alert(data.message);
       form.reset();
     } catch (error) {
-      alert("Ошибка при отправке: " + error.message);
+      console.error("Ошибка:", error);
+      alert(error.message);
+      form.phone.focus();
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = "Отправить сообщение";
+      submitBtn.textContent = "Отправить сообщение";
     }
   });
