@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Гостевой дом у Алана - Гагра, Абхазия</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/frontend/css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Навигационное меню -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-home me-2"></i>Гостевой дом у Алана
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rooms">Номера</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Отзывы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Связаться</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">Отдых в Гагре</h1>
+            <p class="lead mb-5">Окунитесь в атмосферу уюта и гармонии с природой в нашем гостевом доме</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#contact" class="btn btn-primary btn-lg px-4 pulse">Связаться с нами</a>
+                <a href="#rooms" class="btn btn-outline-light btn-lg px-4">Наши номера</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О отеле -->
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center section-title">О Гагре</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="5"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="6"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="7"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="8"></button>
+                            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="9"></button>
+                        </div>
+                        
+                        <div class="carousel-inner rounded-3 overflow-hidden" style="height: 400px;">
+                            <div class="carousel-item active h-100">
+                                <img src="img/gagra3.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Вид на Гагру с высоты">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra4.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Озеро Рица">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra5.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Пляж в Гагре">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra6.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Пляж в Гагре">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra7.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Пляж в Гагре">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra8.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Пляж в Гагре">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra9.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Пляж в Гагре">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img src="img/gagra10.webp" 
+                                     class="d-block w-100 h-100 object-cover" alt="Пляж в Гагре">
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Уютный гостевой дом в сердце Абхазии-Гагра</h3>
+                    <p class="lead">Гостевой дом "У Алана" расположен в живописном месте города Гагра, всего в 200 метрах от моря.</p>
+                    <p>Наш дом сочетает в себе современный комфорт и традиционное абхазское гостеприимство. Мы окружены величественными горами и субтропической растительностью, что создает неповторимую атмосферу для вашего отдыха.</p>
+                    <p>К вашим услугам уютные номера с видом на море или горы, общая кухня, терраса для отдыха и близость к главным достопримечательностям Гагры.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt fs-4 me-3 text-primary"></i>
+                                <div>
+                                    <h5 class="mb-0">Расположение</h5>
+                                    <p class="mb-0">г. Гагра, ул. Генерала Дбар, 159</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-umbrella-beach fs-4 me-3 text-primary"></i>
+                                <div>
+                                    <h5 class="mb-0">Пляж</h5>
+                                    <p class="mb-0">Галечный пляж в 5 минутах ходьбы</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-door-open fs-4 me-3 text-primary"></i>
+                                <div>
+                                    <h5 class="mb-0">Номера</h5>
+                                    <p class="mb-0">• 3 двухместных номера  <br>• 1 двухкомнатный семейный номер  <br>• 1 улучшенный номер на 4 человека (возможно добавление мест)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-wifi fs-4 me-3 text-primary"></i>
+                                <div>
+                                    <h5 class="mb-0">Удобства</h5>
+                                    <p class="mb-0">Wi-Fi, парковка, терраса</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h4 class="mb-4">Интересные факты об Абхазии:</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="fact-card">
+                                <div class="fact-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <h5>Горный край</h5>
+                                <p>64% территории Абхазии занимают горы, что делает её одним из самых живописных регионов Черноморского побережья.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="fact-card">
+                                <div class="fact-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h5>Чистейшее море</h5>
+                                <p>Черное море у берегов Абхазии считается одним из самых чистых, так как здесь нет крупных промышленных предприятий.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Номера -->
+    <section id="rooms" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Наши номера</h2>
+            <p class="text-center mb-5">Выберите номер по вашему вкусу</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card room-card">
+                        <img src="img/photo_2025-05-01_21-34-30-_2_.png" 
+                             class="card-img-top" alt="Стандартный номер">
+                        <div class="card-body">
+                            <h5 class="card-title">Стандарт</h5>
+                            <p class="card-text">Уютный номер с одной двуспальной кроватью, современной мебелью, телевизором и кондиционером, а также всем необходимым для комфортного отдыха. При необходимости возможно добавить дополнительное место в номер. Мы гарантируем, что ваше пребывание будет максимально комфортным и приятным!</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Кондиционер</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Wi-Fi</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Телевизор</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Собственная ванная комната</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 mb-0">от 4 500 ₽/ночь</span>
+                                <a href="#contact" class="btn btn-primary">Связаться</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card room-card">
+                        <img src="img/photo_2025-05-01_21-35-50.jpg" 
+                             class="card-img-top" alt="Смежный номер">
+                        <div class="card-body">
+                            <h5 class="card-title">Смежный</h5>
+                            <p class="card-text">Просторный номер с двумя комнатами и двуспальными кроватями, телевизором и кондиционером, а также уютной зоной отдыха. Наслаждайтесь панорамным видом на море или горы из вашего окна. Этот номер — идеальный выбор для семейного отдыха, где вы сможете расслабиться и провести время с близкими. При необходимости возможно добавить дополнительное место для вашего удобства. Ваш комфорт — наша приоритетная задача!</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Все удобства Стандарта</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Две комнаты</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Собственная ванная комната</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i>Дополнительное место для ребенка</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 mb-0">от 6 000 ₽/ночь</span>
+                                <a href="#contact" class="btn btn-primary">Связаться</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4 text-center">
+                <i class="fas fa-info-circle me-2"></i> Для бронирования свяжитесь с нами по телефону или через WhatsApp
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#gallery" class="btn btn-outline-primary btn-lg">Посмотреть все фото номеров</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Галерея</h2>
+            <p class="text-center mb-5">Наш гостевой дом и прекрасные виды Абхазии</p>
+            
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/photo_2025-05-01_21-35-50.jpg" 
+                             class="gallery-img" alt="Гостевой дом" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/photo_2025-05-01_21-35-50.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/s5.jpg" 
+                             class="gallery-img" alt="Природа Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/s5.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/Y1.jpg" 
+                             class="gallery-img" alt="Стандартный номер" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/Y1.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/Y2.jpg" 
+                             class="gallery-img" alt="Смежный номер" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/Y2.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/photo_2025-05-01_21-34-30-_2_.png" 
+                             class="gallery-img" alt="Терраса" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/photo_2025-05-01_21-34-30-_2_.png">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/S2.jpg" 
+                             class="gallery-img" alt="Пляж" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/S2.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/Y4.jpg" 
+                             class="gallery-img" alt="Закат в Гагре" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/Y4.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/Y5.jpg" 
+                             class="gallery-img" alt="Горы Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/Y5.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/O1.jpg" 
+                             class="gallery-img" alt="Горы Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/O1.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/O2.jpg" 
+                             class="gallery-img" alt="Горы Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/O2.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/O4.jpg" 
+                             class="gallery-img" alt="Горы Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/O4.jpg">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="gallery-img-container">
+                        <img src="img/O5.jpg" 
+                             class="gallery-img" alt="Горы Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                             data-img="img/O5.jpg">
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="gallery-img-container">
+                            <img src="img/v1.jpg" 
+                                 class="gallery-img img-fluid" alt="Горы Абхазии" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                                 data-img="img/v1.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Отзывы наших гостей</h2>
+            <p class="text-center mb-5">Что говорят о нас наши гости</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" 
+                                 class="rounded-circle me-3" width="60" height="60" alt="Гость">
+                            <div>
+                                <h5 class="mb-0">Екатерина</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Отдыхали в июле 2023 года. Гостевой дом превзошел все ожидания! Чистые номера, уютная атмосфера, отзывчивый хозяин. Вид на море из окна просто завораживает. Обязательно вернемся!"</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" 
+                                 class="rounded-circle me-3" width="60" height="60" alt="Гость">
+                            <div>
+                                <h5 class="mb-0">Андрей</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Отличное место для отдыха с семьей. Дети в восторге от близости к морю, а мы с женой - от уютной террасы. Территория ухоженная, везде чистота и порядок. Рекомендую смежный номер для семьи."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/63.jpg" 
+                                 class="rounded-circle me-3" width="60" height="60" alt="Гость">
+                            <div>
+                                <h5 class="mb-0">Ольга</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Это был наш третий визит в этот гостевой дом, и снова все на высшем уровне! Особенно хочется отметить гостеприимство хозяина - Алан всегда поможет советом и расскажет о местных достопримечательностях."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title text-start">Свяжитесь с нами</h2>
+                    <p class="mb-4">Заполните форму, и мы свяжемся с вами для уточнения деталей.</p>
+                    
+                    <form id="contactForm" class="booking-form" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Ваш вопрос или пожелания</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="submitBtn">Отправить сообщение</button>
+                    </form>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">Контакты</h2>
+                    <p class="mb-4">Мы всегда рады ответить на ваши вопросы и помочь с бронированием.</p>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fas fa-map-marker-alt fs-4 me-3 text-primary"></i>
+                            <div>
+                                <h5 class="mb-1">Адрес</h5>
+                                <p class="mb-0">Республика Абхазия, г. Гагра, ул. Генерала Дбар, 159</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fas fa-phone-alt fs-4 me-3 text-primary"></i>
+                            <div>
+                                <h5 class="mb-1">Телефон</h5>
+                                <p class="mb-0">+7 940 787-83-38</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fas fa-envelope fs-4 me-3 text-primary"></i>
+                            <div>
+                                <h5 class="mb-1">Email</h5>
+                                <a href="mailto:amaba26@mail.ru"><p class="mb-0">amaba26@mail.ru</p></a>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fab fa-whatsapp fs-4 me-3 text-primary"></i>
+                            <div>
+                                <h5 class="mb-2">WhatsApp</h5>
+                                <a href="https://wa.me/79407878338" class="whatsapp-btn">
+                                    <i class="fab fa-whatsapp me-2"></i> Написать в WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <!-- <h5 class="mb-3">Мы в социальных сетях</h5> -->
+                        <div class="d-flex">
+                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h5 class="mb-3">Как добраться</h5>
+                        <div class="map-placeholder">
+                            <img src="img/map.jpg" 
+                                 class="img-fluid rounded" alt="Улица Генерала Дбар, Гагра">
+                        </div>
+                        <p class="mt-2">Гостевой дом расположен в центре Гагры, в 5 минутах ходьбы от моря и основных достопримечательностей.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="mb-4">Гостевой дом у Алана</h4>
+                    <p>Уютный дом в самом сердце Абхазии, где гармонично сочетаются комфорт, гостеприимство и потрясающая природа.</p>
+                    <div class="d-flex mt-4">
+                        <a href="@amaba26" class="social-icon me-3"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/alanamaba?igsh=Nzg4YTQwMXBpaDZv&utm_source=qr" class="social-icon me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://vk.com/id46049512" class="social-icon me-3"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Главная</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">О нас</a></li>
+                        <li class="mb-2"><a href="#rooms" class="text-white text-decoration-none">Номера</a></li>
+                        <li class="mb-2"><a href="#gallery" class="text-white text-decoration-none">Галерея</a></li>
+                        <li class="mb-2"><a href="#reviews" class="text-white text-decoration-none">Отзывы</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> г. Гагра, ул. Генерала Дбар, 159</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +7 940 787-83-38</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> amaba26@mail.ru</li>
+                        <li><i class="fas fa-clock me-2"></i> Круглосуточно</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Подписаться на новости</h5>
+                    <p>Будьте в курсе наших акций и специальных предложений.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Ваш email">
+                            <button class="btn btn-light" type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                    <p class="small">Подписываясь, вы соглашаетесь с нашей <a href="#" class="text-white">политикой конфиденциальности</a>.</p>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Гостевой дом у Алана. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Разработано с <i class="fas fa-heart text-danger"></i> для вашего отдыха <br>от<a class="my-name" href="mailto:renatdasania8@gmail.com"> dasanchik</a> </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Модальное окно галереи -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" class="img-fluid modal-img" id="modalImage" alt="Фото гостевого дома">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+    <script src="/frontend/js/app.js"></script>
+</body>
+</html>
