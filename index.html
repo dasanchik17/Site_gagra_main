@@ -153,7 +153,7 @@
                                 <i class="fas fa-door-open fs-4 me-3 text-primary"></i>
                                 <div>
                                     <h5 class="mb-0">Номера</h5>
-                                    <p class="mb-0">• 3 двухместных номера  <br>• 1 двухкомнатный семейный номер  <br>• 1 улучшенный номер на 4 человека (возможно добавление мест)</p>
+                                    <p class="mb-0">3 двухместных номера  <br>1 двухкомнатный семейный номер  <br>1 улучшенный номер на 4 человека (возможно добавление мест)</p>
                                 </div>
                             </div>
                         </div>
@@ -197,68 +197,115 @@
     </section>
 
     <!-- Номера -->
+
     <section id="rooms" class="py-5 bg-light">
-        <div class="container py-5">
-            <h2 class="text-center section-title">Наши номера</h2>
-            <p class="text-center mb-5">Выберите номер по вашему вкусу</p>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card room-card">
-                        <img src="/frontend/img/photo_2025-05-01_21-34-30-_2_.png" 
-                             class="card-img-top" alt="Стандартный номер">
-                        <div class="card-body">
-                            <h5 class="card-title">Стандарт</h5>
-                            <p class="card-text">Уютный номер с одной двуспальной кроватью, современной мебелью, телевизором и кондиционером, а также всем необходимым для комфортного отдыха. При необходимости возможно добавить дополнительное место в номер. Мы гарантируем, что ваше пребывание будет максимально комфортным и приятным!</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Кондиционер</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Wi-Fi</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Телевизор</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Собственная ванная комната</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">от 4 500 ₽/ночь</span>
-                                <a href="#contact" class="btn btn-primary">Связаться</a>
+    <div class="container py-5">
+        <h2 class="text-center section-title">Наши номера</h2>
+        <p class="text-center mb-5">Выберите номер по вашему вкусу</p>
+        
+        <div class="row g-4">
+            <!-- Стандартный номер -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <img src="/frontend/img/photo_2025-05-01_21-34-30-_2_.png" 
+                         class="card-img-top" alt="Стандартный номер">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Стандарт</h5>
+                        <p class="card-text">Уютный номер с одной двуспальной кроватью, современной мебелью, телевизором и кондиционером, а также всем необходимым для комфортного отдыха. При необходимости возможно добавить дополнительное место в номер. Мы гарантируем, что ваше пребывание будет максимально комфортным и приятным!</p>
+                        
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Кондиционер</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Wi-Fi</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Телевизор</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Собственная ванная комната</li>
+                        </ul>
+                        
+                        <div class="mt-auto">
+                            <div class="price-grid mb-3">
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span>Июнь</span>
+                                    <strong>3000₽/сутки</strong>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span>Июль</span>
+                                    <strong>4500₽/сутки</strong>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span>Август</span>
+                                    <strong>4500₽/сутки</strong>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2">
+                                    <span>Сентябрь</span>
+                                    <strong>3000₽/сутки</strong>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card room-card">
-                        <img src="/frontend/img/photo_2025-05-01_21-35-50.jpg" 
-                             class="card-img-top" alt="Смежный номер">
-                        <div class="card-body">
-                            <h5 class="card-title">Смежный</h5>
-                            <p class="card-text">Просторный номер с двумя комнатами и двуспальными кроватями, телевизором и кондиционером, а также уютной зоной отдыха. Наслаждайтесь панорамным видом на море или горы из вашего окна. Этот номер — идеальный выбор для семейного отдыха, где вы сможете расслабиться и провести время с близкими. При необходимости возможно добавить дополнительное место для вашего удобства. Ваш комфорт — наша приоритетная задача!</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Все удобства Стандарта</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Две комнаты</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Собственная ванная комната</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i>Дополнительное место для ребенка</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">от 6 000 ₽/ночь</span>
-                                <a href="#contact" class="btn btn-primary">Связаться</a>
+                            
+                            <div class="text-center mt-3">
+                                <a href="#contact" class="btn btn-primary w-100">Забронировать</a>
+                            </div>
+                            
+                            <div class="text-muted small mt-2 text-center">
+                                * Бронирование вне сезона требует консультации
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="alert alert-info mt-4 text-center">
-                <i class="fas fa-info-circle me-2"></i> Для бронирования свяжитесь с нами по телефону или через WhatsApp
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="#gallery" class="btn btn-outline-primary btn-lg">Посмотреть все фото номеров</a>
+
+            <!-- Смежный номер -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <img src="/frontend/img/photo_2025-05-01_21-35-50.jpg" 
+                         class="card-img-top" alt="Смежный номер">ЁЁ
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Смежный</h5>
+                        <p class="card-text">Просторный номер с двумя комнатами и двуспальными кроватями, телевизором и кондиционером, а также уютной зоной отдыха. Наслаждайтесь панорамным видом на море или горы из вашего окна. Идеальный выбор для семейного отдыха.</p>
+                        
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Все удобства Стандарта</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Две комнаты</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Отдельная ванная</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Дополнительное место</li>
+                        </ul>
+
+                        <div class="mt-auto">
+                            <div class="price-grid mb-3">
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span>Июнь</span>
+                                    <strong>4500/сутки</strong>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span>Июль</span>
+                                    <strong>6000/сутки</strong>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span>Август</span>
+                                    <strong>6000/сутки</strong>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2">
+                                    <span>Сентябрь</span>
+                                    <strong>4500/сутки</strong>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <a href="#contact" class="btn btn-primary w-100">Забронировать</a>
+                            </div>
+                            
+                            <div class="text-muted small mt-2 text-center">
+                                * Бронирование вне сезона требует консультации
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+        <div class="alert alert-info mt-5 text-center">
+            <i class="fas fa-info-circle me-2"></i> Для уточнения деталей свяжитесь с нами
+        </div>
+    </div>
+</section>
 
     <!-- Галерея -->
     <section id="gallery" class="py-5">
@@ -363,7 +410,8 @@
             </div>
         </div>
     </section>
-
+    
+    
     <!-- Отзывы -->
     <section id="reviews" class="py-5 bg-light">
         <div class="container py-5">
@@ -458,6 +506,7 @@
                         
                         <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="submitBtn">Отправить сообщение</button>
                     </form>
+                
                 </div>
                 
                 <div class="col-lg-6">
