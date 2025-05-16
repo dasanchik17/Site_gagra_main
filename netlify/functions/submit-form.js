@@ -1,39 +1,43 @@
 const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
-  // Разрешаем CORS
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
   };
 
-  // Обрабатываем OPTIONS-запрос
   if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({ message: "CORS разрешены" }),
-    };
+    return { statusCode: 200, headers, body: "OK" };
   }
 
   try {
     const data = JSON.parse(event.body);
 
-    // Здесь можно добавить:
-    // 1. Отправку email через SendGrid/Mailgun
-    // 2. Сохранение в Google Sheets
-    // 3. Интеграцию с Telegram-ботом
+    // Отправка в Telegram
+    const telegramResponse = await fetch(
+      `https://api.telegram.org/bot6542482262:AAESBr-ge4kVmSVUOo8OFRj0D4k_ZfCGRMc/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: "6297870983",
+          text: `🔥 Новая заявка!\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n📝 Сообщение: ${data.message}`,
+        }),
+      }
+    );
 
-    // Пример логирования данных
-    console.log("Получены данные:", data);
+    if (!telegramResponse.ok) {
+      const error = await telegramResponse.json();
+      throw new Error(`Telegram: ${error.description}`);
+    }
 
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({
         success: true,
-        message: "Сообщение успешно отправлено!",
+        message: "Сообщение отправлено в Telegram!",
       }),
     };
   } catch (error) {
@@ -41,8 +45,7 @@ exports.handler = async (event) => {
       statusCode: 500,
       headers,
       body: JSON.stringify({
-        success: false,
-        error: "Ошибка сервера",
+        error: error.message,
       }),
     };
   }
